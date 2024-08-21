@@ -1,0 +1,60 @@
+/* Estilos generales */
+.container {
+  max-width: 1200px;
+  margin: 0 auto; background-color: #1f1f1f; 
+padding: 2rem;
+ margin-bottom: 3rem;
+ padding-bottom: 5rem;
+  
+}
+.news-section {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  }
+
+.welcome-section {
+  padding: 2rem 0rem;
+}
+  
+  /* Mobile: una sola columna */
+  .news-item {
+    background-color: #1f1f1f;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Estilos para pantallas más grandes (desktop) */
+  @media (min-width: 768px) {
+    .news-section {
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: repeat(3, auto);
+      grid-auto-flow: dense; /* Permite que los elementos se organicen de manera desigual */
+    }
+  
+    /* Ejemplo de diseño desigual */
+    .news-item:nth-child(1) {
+      grid-column: span 2; /* La primera noticia ocupa dos columnas */
+      grid-row: span 2; /* Ocupa también dos filas */
+    }
+  
+    .news-item:nth-child(2) {
+      grid-column: span 1;
+      grid-row: span 1;
+    }
+  
+    .news-item:nth-child(3) {
+      grid-column: span 1;
+      grid-row: span 2; /* Esta noticia ocupa dos filas */
+    }
+  
+    .news-item:nth-child(4),
+    .news-item:nth-child(5),
+    .news-item:nth-child(6) {
+      grid-column: span 1;
+      grid-row: span 1;
+    }
+  }
+  
